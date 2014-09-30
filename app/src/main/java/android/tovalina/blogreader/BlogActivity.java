@@ -27,7 +27,7 @@ public class BlogActivity extends Activity {
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         listView = (ListView)findViewById(R.id.listView);
 
-        listView.setEmptyView(progressBar);
+        listView.setEmptyView(progressBar); //sets progress bar to be empty
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayStrings); //adapts string to show in listView
         listView.setAdapter(adapter); //use adapter from line above
