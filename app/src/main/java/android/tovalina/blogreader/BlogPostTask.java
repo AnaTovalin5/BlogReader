@@ -23,6 +23,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 Log.i("BlogPostTask", "Succesful Connection " + responseCode);
+                BlogPostParser.get().parse(connection.getInputStream());
             }
         }
         catch(MalformedURLException error) { //catches error
