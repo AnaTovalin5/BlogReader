@@ -3,6 +3,7 @@ package android.tovalina.blogreader;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import org.json.JSONObject;
 
@@ -39,6 +40,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) { //creates blog-posts
-        super.onPostExecute(jsonObject);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayStrings); //adapts string to show in listView
+        listView.setAdapter(adapter); //use adapter from line above
     }
 }

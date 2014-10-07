@@ -17,20 +17,10 @@ public class BlogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
 
-        String[] arrayStrings = new String[] { //fake blog posts
-                "Blog Post 1",
-                "Blog Post 2",
-                "Blog Post 3",
-                "Blog Post 4"
-        };
-
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         listView = (ListView)findViewById(R.id.listView);
 
         listView.setEmptyView(progressBar); //sets progress bar to be empty
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayStrings); //adapts string to show in listView
-        listView.setAdapter(adapter); //use adapter from line above
 
         new BlogPostTask().execute(); //creates new object and executes
     }
