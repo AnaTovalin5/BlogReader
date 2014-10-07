@@ -2,6 +2,7 @@ package android.tovalina.blogreader;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -31,7 +32,7 @@ public class BlogPostParser {
         return parser;
     }
 
-    public JSONObject parse(InputStream inputStream) {
+    public JSONObject parse (InputStream inputStream) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream)); //reader for inputStream
         StringBuilder builder = new StringBuilder(); //builds new string
         JSONObject jsonObject = null;
@@ -55,7 +56,12 @@ public class BlogPostParser {
         return jsonObject;
     }
 
-    public void readFeed(JSONObject jsonObject) {
-
+    public void readFeed (JSONObject jsonObject) {
+        try {
+            JSONArray jsonPosts = jsonObject.getJSONArray("posts");
+        }
+        catch (JSONException error) {
+            Log.e("BlogPostsParser", "JSONException " + error);
+        }
     }
 }
