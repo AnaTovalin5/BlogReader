@@ -14,15 +14,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.jar.JarException;
 
-/**
- * Created by Student on 10/2/2014.
- */
 public class BlogPostParser {
     private static BlogPostParser parser;
     public ArrayList<BlogPost> posts;
 
     private BlogPostParser() {
-
+        posts = new ArrayList<BlogPost>();
     }
 
     public static BlogPostParser get() {
@@ -67,6 +64,7 @@ public class BlogPostParser {
                 String url = post.getString("url");
 
                 BlogPost blogPost = new BlogPost(title, url);
+                posts.add(blogPost); //storing objects into variable posts
             }
         }
         catch (JSONException error) {
