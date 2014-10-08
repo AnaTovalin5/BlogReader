@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import org.json.JSONObject;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
     private Activity activity;
@@ -43,6 +45,8 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) { //creates blog-posts
+        ListView listView = (ListView)activity.findViewById(R.id.listView);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, arrayStrings); //adapts string to show in listView
         listView.setAdapter(adapter); //use adapter from line above
     }
