@@ -22,7 +22,7 @@ public class BlogActivity extends Activity {
 
         listView.setEmptyView(progressBar); //sets progress bar to be empty
 
-        new BlogPostTask().execute(); //creates new object and executes
+        new BlogPostTask().execute(this); //creates new object and executes
     }
 
 }
