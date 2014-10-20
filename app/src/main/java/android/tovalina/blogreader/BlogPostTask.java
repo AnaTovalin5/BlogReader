@@ -45,8 +45,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) { //creates blog-posts
-        BlogPostParser.get().readFeed(jsonObject);
-        ListView listView = (ListView)activity.findViewById(R.id.listView);
+        BlogPostParser.get().readFeed(jsonObject)activity.findViewById(R.id.listView);
 
         ArrayAdapter<BlogPost> adapter = new ArrayAdapter<BlogPost>(activity, android.R.layout.simple_list_item_1, BlogPostParser.get().posts); //adapts string to show in listView
         listView.setAdapter(adapter); //use adapter from line above
