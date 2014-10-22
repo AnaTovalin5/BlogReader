@@ -32,7 +32,7 @@ public class BlogActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("BlogActivity", "Title " + BlogPostParser.get().posts.get(position).title);
 
-                Intent intent = new Intent(getApplicationContext(), BlogWebActivity.class); //creates intenet
+                Intent intent = new Intent(getApplicationContext(), BlogWebActivity.class); //creates intent
                 Uri blogUri = Uri.parse(BlogPostParser.get().posts.get(position).url); //creates Uri
                 intent.setData(blogUri);
 
