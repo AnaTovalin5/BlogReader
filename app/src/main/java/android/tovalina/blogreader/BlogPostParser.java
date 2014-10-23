@@ -58,7 +58,7 @@ public class BlogPostParser {
         try {
             JSONArray jsonPosts = jsonObject.getJSONArray("posts");
 
-            for(int index = 0; index < jsonPosts.length(); index++) {
+                for(int index = 0; index < jsonPosts.length(); index++) {  //prints blog titles onto the screens
                 JSONObject post = jsonPosts.getJSONObject(index);
 
                 String title = Html.fromHtml(post.getString("title")).toString();
