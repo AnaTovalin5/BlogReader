@@ -26,7 +26,7 @@ public class BlogWebActivity extends Activity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);  //makes progressbar disappear
             }
         });
     }
