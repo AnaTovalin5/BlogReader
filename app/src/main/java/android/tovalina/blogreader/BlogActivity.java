@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -15,7 +16,7 @@ import android.widget.ProgressBar;
 public class BlogActivity extends Activity {
 
     protected ProgressBar progressBar;
-    protected ListView listView;
+    protected GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +24,11 @@ public class BlogActivity extends Activity {
         setContentView(R.layout.activity_blog);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        listView = (ListView)findViewById(R.id.listView);
+        gridView = (GridView)findViewById(R.id.gridView);
 
-        listView.setEmptyView(progressBar); //sets progress bar to be empty
+        gridView.setEmptyView(progressBar); //sets progress bar to be empty
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("BlogActivity", "Title " + BlogPostParser.get().posts.get(position).title);

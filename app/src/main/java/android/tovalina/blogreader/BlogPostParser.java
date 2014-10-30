@@ -61,7 +61,7 @@ public class BlogPostParser {
                 for(int index = 0; index < jsonPosts.length(); index++) {  //prints blog titles onto the screens
                 JSONObject post = jsonPosts.getJSONObject(index);
 
-                String title = Html.fromHtml(post.getString("title")).toString();
+                String title = Html.fromHtml(post.getString("title")).toString(); //gets all strings
                 String url = post.getString("url");
                 String date = post.getString("date");
                 String author = post.getString("author");
