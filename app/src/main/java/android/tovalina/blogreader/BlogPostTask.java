@@ -47,9 +47,9 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) { //creates blog-posts
         BlogPostParser.get().readFeed(jsonObject);
-        GridView gridView = (GridView)activity.findViewById(R.id.gridView);
+            GridView gridView = (GridView)activity.findViewById(R.id.gridView);
 
         BlogPostAdapter adapter  = new BlogPostAdapter(activity, BlogPostParser.get().posts);
-        gridView.setAdapter(adapter); //use adapter from line above
+        gridView.setAdapter(adapter); //uses adapter from line above
     }
 }
